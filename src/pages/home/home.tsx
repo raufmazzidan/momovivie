@@ -1,4 +1,3 @@
-import Button from "../../components/atoms/button";
 import Banner from "../../components/molecules/banner";
 import Slider from "../../components/molecules/slider";
 
