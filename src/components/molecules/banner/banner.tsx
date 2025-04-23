@@ -1,20 +1,12 @@
-import { Search } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import imgBg from "../../../assets/bg.webp";
 import cn from "../../../helper/cn";
-import { FormEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import SearchBar from "../../atoms/search-bar";
 
 function Banner() {
   const navigate = useNavigate();
-  const onSubmitSearch = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-
-    const searchValue = formData.get("search") as string;
-
-    if (searchValue) {
-      navigate(`/search/${searchValue}`);
-    }
+  const onSubmitSearch = (search: string) => {
+    navigate(`/search?q=${search}`);
   };
 
   return (
@@ -34,21 +26,7 @@ function Banner() {
         <p className="text-xs lg:text-sm">
           Only the Hits. No Flops. Just Great Movies.
         </p>
-        <form
-          onSubmit={onSubmitSearch}
-          className="flex items-center justify-center h-10 lg:h-12 w-full max-w-[500px] mt-4 lg:mt-8"
-        >
-          <input
-            name="search"
-            className="bg-white outline-none text-black px-4 py-1 rounded-l-2xl h-full w-full text-sm"
-          />
-          <button
-            type="submit"
-            className="cursor-pointer bg-white text-pink-500 hover:text-pink-400 h-full pr-4 flex items-center justify-center rounded-r-2xl"
-          >
-            <Search />
-          </button>
-        </form>
+        <SearchBar onSubmit={onSubmitSearch} />
       </div>
     </section>
   );

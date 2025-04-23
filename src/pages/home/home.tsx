@@ -487,6 +487,14 @@ function Home() {
           ({ poster_path }) => `https://image.tmdb.org/t/p/w500/${poster_path}`
         )}
       />
+      <footer className="bg-zinc-900 h-24 flex items-center justify-center px-8">
+        <p className="text-xs">
+          <i>
+            <span className="text-pink-500">momo</span>vivie
+          </i>
+          . All rights reserved.
+        </p>
+      </footer>
     </>
   );
 }
