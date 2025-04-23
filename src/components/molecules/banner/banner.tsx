@@ -26,7 +26,9 @@ function Banner() {
         <p className="text-xs lg:text-sm">
           Only the Hits. No Flops. Just Great Movies.
         </p>
-        <SearchBar onSubmit={onSubmitSearch} />
+        <div className="mt-4 lg:mt-8 flex justify-center w-full">
+          <SearchBar onSubmit={onSubmitSearch} />
+        </div>
       </div>
     </section>
   );

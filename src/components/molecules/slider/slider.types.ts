@@ -1,4 +1,4 @@
 export interface SliderProps {
   title: string;
-  image: string[];
+  data: any[];
 }
