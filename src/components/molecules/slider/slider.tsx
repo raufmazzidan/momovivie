@@ -27,16 +27,16 @@ export default function Slider(props: SliderProps) {
       </h2>
       <div className="relative mt-3 lg:mt-4">
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="ml-[calc(4px*-1)] lg:ml-[calc(12px*-1)] backface-hidden flex touch-pan-y">
+          <div className="backface-hidden flex touch-pan-y">
             {image.map((src, index) => (
               <div
-                className="flex-[0_0_30%] md:flex-[0_0_20%] lg:flex-[0_0_13%] pl-1 lg:pl-3 w-fit h-fit"
+                className="flex-[0_0_30%] md:flex-[0_0_20%] lg:flex-[0_0_13%] aspect-[2/3]"
                 key={index}
               >
                 <img
                   src={src}
                   alt={`Movie ${index}`}
-                  className="h-full object-cover aspect-[2/3]"
+                  className="h-full object-cover"
                 />
               </div>
             ))}
