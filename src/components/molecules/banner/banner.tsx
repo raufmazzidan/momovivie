@@ -19,7 +19,7 @@ function Banner() {
 
   return (
     <section
-      className={cn("w-full h-[75vh] z-50 transition-all")}
+      className={cn("w-full h-[50vh] z-50 transition-all")}
       style={{
         backgroundImage: `url(${imgBg})`,
         backgroundSize: "cover",
