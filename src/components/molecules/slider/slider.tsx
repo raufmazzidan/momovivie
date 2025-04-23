@@ -127,7 +127,7 @@ export default function Slider(props: SliderProps) {
                     alt={`Movie ${index}`}
                     className="h-full object-cover"
                   />
-                  <div className="absolute top-0 bottom-0 w-full h-full z-20 bg-zinc-800/80 group-hover:opacity-100 opacity-0 transition-all cursor-pointer p-4">
+                  <div className="absolute top-0 bottom-0 w-full h-full z-20 bg-zinc-800/80 group-hover:opacity-100 group-focus:opacity-100 opacity-0 transition-all cursor-pointer p-4">
                     <p className="text-[8px] text-zinc-300">
                       {dateFormatFromNow(release_date)}
                     </p>
