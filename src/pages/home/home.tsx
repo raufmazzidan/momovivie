@@ -1,5 +1,7 @@
-import Button from "../components/atoms/button";
-import NetflixSlider from "../components/molecules/slider";
+import Button from "../../components/atoms/button";
+import Banner from "../../components/molecules/banner";
+import Slider from "../../components/molecules/slider";
+
 const data = {
   detailMovie: {
     adult: false,
@@ -466,18 +468,23 @@ const data = {
 
 function Home() {
   return (
-    <div>
-      <NetflixSlider
-        images={data.listMovie.results.map(
-          ({ poster_path }) => `https://image.tmdb.org/t/p/w500/${poster_path}`
-        )}
-      />
-      <h1 className="text-3xl font-bold underline text-red-500">
-        Hello world!
-      </h1>
-      <Button>Hello</Button>
-      <Button variant="outline">World</Button>
-      {/* {data.listMovie.results.map(({ poster_path, backdrop_path }) => (
+    <>
+      <Banner />
+      <div className="py-4">
+        <Slider
+          images={data.listMovie.results.map(
+            ({ poster_path }) =>
+              `https://image.tmdb.org/t/p/w500/${poster_path}`
+          )}
+        />
+      </div>
+      <div>
+        <h1 className="text-3xl font-bold underline text-red-500">
+          Hello world!
+        </h1>
+        <Button>Hello</Button>
+        <Button variant="outline">World</Button>
+        {/* {data.listMovie.results.map(({ poster_path, backdrop_path }) => (
         <>
           <img
             src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
@@ -489,10 +496,11 @@ function Home() {
           />
         </>
       ))} */}
-      <div className="overflow-x-auto">
-        <pre>{JSON.stringify(data, undefined, 2)}</pre>
+        <div className="overflow-x-auto">
+          <pre>{JSON.stringify(data, undefined, 2)}</pre>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
