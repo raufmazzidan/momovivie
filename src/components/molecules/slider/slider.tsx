@@ -26,13 +26,15 @@ export default function Slider({ images }: { images: string[] }) {
             display: "flex",
             touchAction: "pan-y",
             marginLeft: "calc(12px * -1)",
-            maxHeight: 400,
           }}
         >
           {images.map((src, index) => (
             <div
-              className="flex-[0_0_30%] md:flex-[0_0_20%] lg:flex-[0_0_14%] pl-3"
+              className="flex-[0_0_30%] md:flex-[0_0_20%] lg:flex-[0_0_14%]"
               key={index}
+              style={{
+                aspectRatio: "2/3",
+              }}
             >
               <img
                 src={src}
