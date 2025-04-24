@@ -478,17 +478,17 @@ function Search() {
   };
 
   const onBack = () => {
-    navigate("/");
+    navigate(-1);
   };
 
   return (
-    <section className="p-8">
+    <section className="p-8 max-w-6xl m-auto">
       <button
         onClick={onBack}
         className="flex items-center mb-6 gap-2 hover:text-pink-500 cursor-pointer transition-all"
       >
         <ArrowLeft size={20} />
-        <p className="text-sm">Back to Home</p>
+        <p className="text-sm">Back to Previous Page</p>
       </button>
       <h1 className="font-semibold text-2xl lg:text-4xl xl:text-5xl mb-4">
         <span className="text-pink-500">momo</span>vivie
