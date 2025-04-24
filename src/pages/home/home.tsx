@@ -469,30 +469,9 @@ function Home() {
   return (
     <>
       <Banner />
-      <Slider
-        title="Now Playing"
-        data={data.listMovie.results.map(({ poster_path, title, ...d }) => ({
-          ...d,
-          src: `https://image.tmdb.org/t/p/w500/${poster_path}`,
-          title: title,
-        }))}
-      />
-      <Slider
-        title="Trending Now"
-        data={data.listMovie.results.map(({ poster_path, title, ...d }) => ({
-          ...d,
-          src: `https://image.tmdb.org/t/p/w500/${poster_path}`,
-          title: title,
-        }))}
-      />
-      <Slider
-        title="Upcoming"
-        data={data.listMovie.results.map(({ poster_path, title, ...d }) => ({
-          ...d,
-          src: `https://image.tmdb.org/t/p/w500/${poster_path}`,
-          title: title,
-        }))}
-      />
+      <Slider title="Now Playing" data={data.listMovie.results} />
+      <Slider title="Trending Now" data={data.listMovie.results} />
+      <Slider title="Upcoming" data={data.listMovie.results} />
       <footer className="bg-zinc-900 h-24 flex items-center justify-center px-8">
         <p className="text-xs">
           <i>

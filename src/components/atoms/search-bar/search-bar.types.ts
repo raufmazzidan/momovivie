@@ -1,5 +1,4 @@
 export interface SearchBarProps {
-  onChange?: (value: string) => void;
-  onSubmit?: (value: string) => void;
-  value?: string;
+  onSubmit: (value: string) => void;
+  defaultValue?: string;
 }

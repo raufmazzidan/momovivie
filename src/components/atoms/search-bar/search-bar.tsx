@@ -3,35 +3,29 @@ import { FormEvent } from "react";
 import { SearchBarProps } from "./search-bar.types";
 
 function SearchBar(props: SearchBarProps) {
-  const { onChange, onSubmit, value } = props;
+  const { onSubmit, defaultValue } = props;
 
-  const handleChange =
-    (type: "submit" | "change") => (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      const formData = new FormData(e.currentTarget);
+  const handleChange = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
 
-      const searchValue = formData.get("search") as string;
+    const searchValue = formData.get("search") as string;
 
-      if (onChange && type === "change") {
-        onChange(searchValue);
-      }
-
-      if (onSubmit && type === "submit") {
-        onSubmit(searchValue);
-      }
-    };
+    onSubmit(searchValue);
+  };
 
   return (
     <form
-      onSubmit={handleChange("submit")}
-      onChange={handleChange("change")}
+      onSubmit={handleChange}
       className="flex items-center justify-center h-10 lg:h-12 w-full min-w-[300px] max-w-[500px]"
     >
       <input
         placeholder="search for a movie.."
         name="search"
-        value={value}
+        defaultValue={defaultValue}
         className="bg-white outline-none text-black px-4 py-1 rounded-l-2xl h-full w-full text-sm"
+        required
+        type="search"
       />
       <button
         type="submit"
