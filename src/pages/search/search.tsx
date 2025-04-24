@@ -497,7 +497,7 @@ function Search() {
       <h2 className="mt-6 font-medium underline decoration-pink-500 underline-offset-3 lg:underline-offset-4">
         Result for <i>"{search}"</i>
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-3 mt-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 mt-4">
         {data.listMovie.results.map((movie) => (
           <CardMovie data={movie} />
         ))}

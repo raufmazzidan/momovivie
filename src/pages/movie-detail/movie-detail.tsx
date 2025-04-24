@@ -178,6 +178,11 @@ function MovieDetail() {
                   4K
                 </div>
               </div>
+              <p className="mt-3 text-sm">
+                Available on:{" "}
+                {DETAIL.spoken_languages.map((l) => l.english_name).join(", ")}
+              </p>
+
               <p className="leading-6 mt-5">{DETAIL.overview}</p>
             </div>
           </div>
