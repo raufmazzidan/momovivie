@@ -17,7 +17,7 @@ function SearchBar(props: SearchBarProps) {
   return (
     <form
       onSubmit={handleChange}
-      className="flex items-center justify-center h-10 lg:h-12 w-full min-w-[300px] max-w-[500px]"
+      className="flex items-center justify-center h-10 lg:h-12 w-full max-w-[500px]"
     >
       <input
         placeholder="search for a movie.."
