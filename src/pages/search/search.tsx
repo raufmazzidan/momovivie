@@ -26,7 +26,7 @@ function Search() {
   });
 
   return (
-    <section className="p-8 max-w-6xl m-auto">
+    <div className="p-8 max-w-6xl m-auto">
       <button
         onClick={onBack}
         className="flex items-center mb-6 gap-2 hover:text-pink-500 cursor-pointer transition-all"
@@ -34,7 +34,10 @@ function Search() {
         <ArrowLeft size={20} />
         <p className="text-sm">Back to Previous Page</p>
       </button>
-      <Link to="/" className="font-semibold text-2xl lg:text-4xl xl:text-5xl">
+      <Link
+        to="/"
+        className="font-semibold text-2xl lg:text-4xl xl:text-5xl hover:opacity-80"
+      >
         <span className="text-pink-500">momo</span>vivie
       </Link>
       <div className="mt-4">
@@ -73,7 +76,7 @@ function Search() {
           )}
         </>
       )}
-    </section>
+    </div>
   );
 }
 

@@ -10,7 +10,7 @@ function Banner() {
   };
 
   return (
-    <section
+    <div
       className={cn("w-full h-[50vh] z-50 transition-all")}
       style={{
         backgroundImage: `url(${imgBg})`,
@@ -30,7 +30,7 @@ function Banner() {
           <SearchBar onSubmit={onSubmitSearch} />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

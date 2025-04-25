@@ -45,3 +45,12 @@ export const getSearch = {
     });
   },
 };
+
+export const getRecommendation = {
+  key: "recommendation-movie",
+  fetch: (movieId: number) => () => {
+    return fetcher<ResponseMovieList>({
+      url: `https://api.themoviedb.org/3/movie/${movieId}/recommendations?language=en-US&page=1`,
+    });
+  },
+};

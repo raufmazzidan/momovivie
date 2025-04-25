@@ -6,11 +6,13 @@ import { dateFormat } from "../../helper/date";
 import { useQuery } from "@tanstack/react-query";
 import { getDetail } from "../../integrations/movie";
 import DetailMovieLoadingScreen from "./elements/loading-screen";
+import RelatedMovies from "./elements/related-movies";
+import PageNotFound from "../../components/molecules/page-not-found";
 
 function MovieDetail() {
   const params = useParams();
 
-  const movieId = Number(params.movieId);
+  const movieId = Number(params.movieId) || 0;
 
   const navigate = useNavigate();
 
@@ -19,25 +21,25 @@ function MovieDetail() {
   };
 
   const queryGetDetail = useQuery({
-    enabled: !!movieId,
     queryKey: [getDetail.key, movieId],
     queryFn: getDetail.fetch(movieId),
+    enabled: !!movieId,
   });
 
   const data = queryGetDetail.data;
 
-  if (queryGetDetail.isPending) {
+  if (queryGetDetail.isPending && movieId) {
     return <DetailMovieLoadingScreen />;
   }
 
-  if (!data) {
-    return <span>Movie not found</span>;
+  if (!movieId || !data) {
+    return <PageNotFound />;
   }
 
   return (
-    <section
+    <div
       key={movieId}
-      className={cn("w-full h-[70vh] z-50 transition-all", "bg-pink-900")}
+      className="w-full h-[70vh] z-50 transition-all bg-pink-900"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1920/${data.backdrop_path})`,
         backgroundSize: "cover",
@@ -47,7 +49,7 @@ function MovieDetail() {
     >
       <div className="w-full h-full bg-gradient-to-b to-zinc-950 from-75% via-90% via-zinc-950 from-zinc-950/80">
         <div className="max-w-6xl p-8 w-full m-auto">
-          <Link to="/" className="font-semibold text-2xl">
+          <Link to="/" className="font-semibold text-2xl hover:opacity-80">
             <span className="text-pink-500">momo</span>vivie
           </Link>
           <button
@@ -111,8 +113,9 @@ function MovieDetail() {
             <p className="leading-6 mt-5">{data.overview}</p>
           </div>
         </div>
+        <RelatedMovies />
       </div>
-    </section>
+    </div>
   );
 }
 

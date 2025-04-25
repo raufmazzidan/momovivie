@@ -22,7 +22,7 @@ export default function Slider(props: SliderProps) {
   } = useArrowButton(emblaApi);
 
   return (
-    <section className="px-4 lg:px-10 mb-8">
+    <div className="px-4 lg:px-10 mb-8">
       <h2 className="font-medium text-sm lg:text-xl underline decoration-pink-500 underline-offset-3 lg:underline-offset-4">
         {title}
       </h2>
@@ -80,6 +80,6 @@ export default function Slider(props: SliderProps) {
           )}
         </>
       )}
-    </section>
+    </div>
   );
 }

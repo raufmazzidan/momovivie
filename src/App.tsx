@@ -5,6 +5,7 @@ import PageLoading from "./components/molecules/page-loading";
 import Home from "./pages/home";
 import MovieDetail from "./pages/movie-detail";
 import Search from "./pages/search/search";
+import PageNotFound from "./components/molecules/page-not-found";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,7 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/movie/:movieId" element={<MovieDetail />} />
-          <Route path="*" element={<div>Page not found</div>} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Suspense>
     </QueryClientProvider>
