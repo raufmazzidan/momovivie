@@ -2,7 +2,7 @@ export interface FetcherConfig {
   url: string;
 }
 
-const token = import.meta.env.VITE_TMDB_TOKEN;
+export const token = import.meta.env.VITE_TMDB_TOKEN;
 
 export default async function fetcher<T>(config: FetcherConfig): Promise<T> {
   const { url } = config;

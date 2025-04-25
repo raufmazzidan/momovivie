@@ -1,94 +1,9 @@
 import { Link } from "react-router-dom";
+import { GENRE } from "../../../constant/movie";
 import cn from "../../../helper/cn";
 import { dateFormatFromNow } from "../../../helper/date";
 import Tag from "../tag";
 import { CardMovieProps } from "./card-movie.types";
-
-function convertGenres(data: { id: number; name: string }[]) {
-  return data.reduce((acc: Record<number, string>, genre) => {
-    acc[genre.id] = genre.name;
-    return acc;
-  }, {} as Record<number, string>);
-}
-
-const GENRE = convertGenres([
-  {
-    id: 28,
-    name: "Action",
-  },
-  {
-    id: 12,
-    name: "Adventure",
-  },
-  {
-    id: 16,
-    name: "Animation",
-  },
-  {
-    id: 35,
-    name: "Comedy",
-  },
-  {
-    id: 80,
-    name: "Crime",
-  },
-  {
-    id: 99,
-    name: "Documentary",
-  },
-  {
-    id: 18,
-    name: "Drama",
-  },
-  {
-    id: 10751,
-    name: "Family",
-  },
-  {
-    id: 14,
-    name: "Fantasy",
-  },
-  {
-    id: 36,
-    name: "History",
-  },
-  {
-    id: 27,
-    name: "Horror",
-  },
-  {
-    id: 10402,
-    name: "Music",
-  },
-  {
-    id: 9648,
-    name: "Mystery",
-  },
-  {
-    id: 10749,
-    name: "Romance",
-  },
-  {
-    id: 878,
-    name: "Science Fiction",
-  },
-  {
-    id: 10770,
-    name: "TV Movie",
-  },
-  {
-    id: 53,
-    name: "Thriller",
-  },
-  {
-    id: 10752,
-    name: "War",
-  },
-  {
-    id: 37,
-    name: "Western",
-  },
-]);
 
 function CardMovie(props: CardMovieProps) {
   const {

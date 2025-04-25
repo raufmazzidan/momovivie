@@ -27,7 +27,10 @@ export default function Slider(props: SliderProps) {
         {title}
       </h2>
       {isLoading ? (
-        <div className="flex ml-[calc(4px*-1)] lg:ml-[calc(12px*-1)] overflow-x-hidden mt-3 lg:mt-4">
+        <div
+          className="flex ml-[calc(4px*-1)] lg:ml-[calc(12px*-1)] overflow-x-hidden mt-3 lg:mt-4"
+          data-testid="slider-loading"
+        >
           {new Array(8).fill(0).map((_, index) => (
             <div
               key={index}
@@ -56,6 +59,7 @@ export default function Slider(props: SliderProps) {
               {!prevBtnDisabled && (
                 <button
                   id="slide-prev"
+                  data-testid="slide-prev"
                   onClick={onPrevButtonClick}
                   className="absolute left-0 top-0 h-full z-10 bg-pink-500/30 hover:bg-pink-500/50 p-2 lg:p-4 cursor-pointer"
                 >
@@ -65,6 +69,7 @@ export default function Slider(props: SliderProps) {
               {!nextBtnDisabled && (
                 <button
                   id="slide-next"
+                  data-testid="slide-next"
                   onClick={onNextButtonClick}
                   className="absolute right-0 top-0 h-full z-10 bg-pink-500/30 hover:bg-pink-500/50 p-2 lg:p-4 cursor-pointer"
                 >

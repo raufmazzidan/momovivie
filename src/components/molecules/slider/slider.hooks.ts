@@ -6,18 +6,16 @@ export const useArrowButton = (emblaApi: EmblaCarouselType | undefined) => {
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
   const onPrevButtonClick = useCallback(() => {
-    if (!emblaApi) return;
-    emblaApi.scrollPrev();
+    emblaApi?.scrollPrev();
   }, [emblaApi]);
 
   const onNextButtonClick = useCallback(() => {
-    if (!emblaApi) return;
-    emblaApi.scrollNext();
+    emblaApi?.scrollNext();
   }, [emblaApi]);
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
+    setPrevBtnDisabled(!emblaApi?.canScrollPrev());
+    setNextBtnDisabled(!emblaApi?.canScrollNext());
   }, []);
 
   useEffect(() => {
