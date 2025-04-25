@@ -22,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/movie/:movieId" element={<MovieDetail />} />
+          <Route path="*" element={<div>Page not found</div>} />
         </Routes>
       </Suspense>
     </QueryClientProvider>
