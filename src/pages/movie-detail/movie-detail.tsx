@@ -83,7 +83,7 @@ function MovieDetail() {
               )}
             </h1>
             <p className="text-xs text-zinc-300 mt-1">{data.tagline}</p>
-            <div className="flex items-center gap-2 my-2">
+            <div className="flex items-center gap-2 my-2 flex-wrap">
               {data.genres.map(({ name }) => {
                 return <Tag size="lg">{name}</Tag>;
               })}
