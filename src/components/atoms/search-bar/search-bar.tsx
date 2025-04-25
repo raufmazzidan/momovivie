@@ -28,6 +28,7 @@ function SearchBar(props: SearchBarProps) {
         type="search"
       />
       <button
+        id="search"
         type="submit"
         className="cursor-pointer bg-white text-pink-500 hover:text-pink-400 h-full pr-4 flex items-center justify-center rounded-r-2xl"
       >

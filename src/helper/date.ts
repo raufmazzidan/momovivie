@@ -6,10 +6,15 @@ export interface IDateFormatProps {
   emptyMessage?: string;
 }
 
-export const dateFormatFromNow = (date: string) =>
-  formatDistanceToNow(new Date(date), {
+export const dateFormatFromNow = (date: string) => {
+  if (!date) {
+    return "-";
+  }
+
+  return formatDistanceToNow(new Date(date), {
     addSuffix: true,
   });
+};
 
 export const dateFormat = ({
   date,
