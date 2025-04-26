@@ -40,6 +40,21 @@ npm run dev
 
 the app will run on: [http://localhost:5173](http://localhost:5173)
 
+## 📂 Folder Structure
+
+```bash
+src/
+├── assets/            # Static assets
+├── components/        # Reusable UI components
+│   ├── atoms/         # Smallest UI elements
+│   └── molecules/     # Combined UI elements
+├── constant/          # App-wide constants
+├── helper/            # Helper functions and utilities
+├── integrations/      # API service
+├── pages/             # Route-based page components
+└── types/             # Type definitions
+```
+
 ## 🧪 Testing & Coverage
 
 Run unit tests:
