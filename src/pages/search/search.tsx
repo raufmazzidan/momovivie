@@ -57,7 +57,10 @@ function Search() {
         )}
       </h2>
       {queryGetSearch.isPending ? (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 mt-4">
+        <div
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 mt-4"
+          data-testid="loading-list-search"
+        >
           <div className="w-full animate-pulse aspect-[2/3] bg-zinc-700" />
           <div className="w-full animate-pulse aspect-[2/3] bg-zinc-700" />
           <div className="w-full animate-pulse aspect-[2/3] max-sm:hidden bg-zinc-700" />

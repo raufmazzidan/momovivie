@@ -39,12 +39,9 @@ function MovieDetail() {
   return (
     <div
       key={movieId}
-      className="w-full h-[70vh] z-50 transition-all bg-pink-900"
+      className="w-full h-[70vh] z-50 transition-all bg-pink-900 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1920/${data.backdrop_path})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
       }}
     >
       <div className="w-full h-full bg-gradient-to-b to-zinc-950 from-75% via-90% via-zinc-950 from-zinc-950/80">

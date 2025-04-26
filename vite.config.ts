@@ -12,9 +12,21 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./setupTests.ts",
     include: ["src/**/*.test.tsx", "src/**/*.test.ts"],
-    exclude: ["src/App.tsx", "src/main.tsx"],
+    exclude: [
+      "src/App.tsx",
+      "src/main.tsx",
+      "src/pages/index.ts",
+      "src/integrations/*.ts",
+      "src/types/*.ts",
+    ],
     coverage: {
-      exclude: ["src/App.tsx", "src/main.tsx"],
+      exclude: [
+        "src/App.tsx",
+        "src/main.tsx",
+        "src/pages/index.ts",
+        "src/integrations/*.ts",
+        "src/types/*.ts",
+      ],
       include: ["src/**/*.tsx", "src/**/*.ts"],
     },
   },

@@ -89,7 +89,6 @@ describe("CardMovie", () => {
 
     const img = screen.getByAltText(/poster movie jumbo/i);
 
-    // simulate onLoad
     fireEvent.load(img);
 
     expect((img as HTMLImageElement).style.display).toBe("block");
@@ -104,7 +103,6 @@ describe("CardMovie", () => {
 
     const img = screen.getByAltText(/poster movie jumbo/i);
 
-    // simulate onError
     fireEvent.error(img);
 
     expect((img as HTMLImageElement).style.display).toBe("none");

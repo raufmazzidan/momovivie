@@ -27,16 +27,19 @@ function Home() {
     <>
       <Banner />
       <Slider
+        key="now-playing"
         title="Now Playing"
         isLoading={queryGetNowPlaying.isPending}
         data={queryGetNowPlaying.data?.results ?? []}
       />
       <Slider
+        key="trending-now"
         title="Trending Now"
         isLoading={queryGetPopular.isPending}
         data={queryGetPopular.data?.results ?? []}
       />
       <Slider
+        key="indonesian-movies"
         title="Indonesian Movies"
         isLoading={queryGetPopularIndo.isPending}
         data={queryGetPopularIndo.data?.results ?? []}

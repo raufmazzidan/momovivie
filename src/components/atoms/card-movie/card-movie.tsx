@@ -22,7 +22,7 @@ function CardMovie(props: CardMovieProps) {
       <img
         src={`https://image.tmdb.org/t/p/w342/${poster_path}`}
         alt={`Poster Movie ${title}`}
-        className="h-full min-w-full object-cover z-10]"
+        className="h-full min-w-full object-cover z-10"
         onLoad={(e) => {
           (e.target as HTMLImageElement).style.display = "block";
         }}

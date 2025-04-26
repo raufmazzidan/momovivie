@@ -2,10 +2,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import PageLoading from "./components/molecules/page-loading";
-import Home from "./pages/home";
-import MovieDetail from "./pages/movie-detail";
-import Search from "./pages/search/search";
 import PageNotFound from "./components/molecules/page-not-found";
+import { Home, MovieDetail, Search } from "./pages";
 
 const queryClient = new QueryClient({
   defaultOptions: {

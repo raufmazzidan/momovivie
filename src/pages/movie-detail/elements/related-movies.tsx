@@ -27,7 +27,10 @@ function RelatedMovies() {
         Related Movies
       </h2>
       {queryGetRecommendation.isPending ? (
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 mt-4">
+        <div
+          className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 mt-4"
+          data-testid="recommendation-loading"
+        >
           <div className="w-full animate-pulse aspect-[2/3] bg-zinc-700" />
           <div className="w-full animate-pulse aspect-[2/3] bg-zinc-700" />
           <div className="w-full animate-pulse aspect-[2/3] max-sm:hidden bg-zinc-700" />

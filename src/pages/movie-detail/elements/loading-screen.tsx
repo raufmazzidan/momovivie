@@ -1,6 +1,9 @@
 function DetailMovieLoadingScreen() {
   return (
-    <div className="w-full h-[70vh] z-50 transition-all bg-pink-900">
+    <div
+      className="w-full h-[70vh] z-50 transition-all bg-pink-900"
+      data-testid="loading-screen-detail"
+    >
       <div className="w-full h-full bg-gradient-to-b to-zinc-950 from-75% via-90% via-zinc-950 from-zinc-950/80">
         <div className="flex flex-col md:flex-row items-center gap-10 max-w-6xl px-8 w-full m-auto pt-[140px]">
           <div className="border-2 border-zinc-400 max-w-48 md:max-w-64 shadow rounded-lg md:rounded-xl animate-pulse bg-zinc-700 w-full aspect-[2/3]" />

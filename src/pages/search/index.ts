@@ -1,5 +1,1 @@
-import { lazy } from "react";
-
-const Home = lazy(() => import("./search"));
-
-export default Home;
+export { default } from "./search";
